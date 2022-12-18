@@ -30,10 +30,12 @@ jobs:
 
       # Post JARs to Maven Central
 
-      - name: Release to Maven Central
+      - name: Release to GitHub Packages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          git config user.name "${{ github.event.head_commit.committer.name }}"
+          git config user.email "${{ github.event.head_commit.committer.email }}"
           mvn -B --file pom.xml release:prepare release:perform
 
       # Create a release
