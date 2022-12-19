@@ -39,11 +39,11 @@ jobs:
           COMMIT_EMAIL=$(git show -s --format='%ae' $COMMIT_HASH)
           echo "Commit author: $COMMIT_AUTHOR"
           echo "Commit email: $COMMIT_EMAIL"
-#          git config user.name "${{ github.event.head_commit.committer.name }}"
-#          git config user.email "${{ github.event.head_commit.committer.email }}"
           git config user.name "$COMMIT_AUTHOR"
           git config user.email "$COMMIT_EMAIL"
           mvn -B --file pom.xml release:prepare release:perform
+      #          git config user.name "${{ github.event.head_commit.committer.name }}"
+      #          git config user.email "${{ github.event.head_commit.committer.email }}"
 
       # Create a release
 
