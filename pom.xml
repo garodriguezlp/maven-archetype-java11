@@ -18,6 +18,7 @@
     <connection>scm:git:https://github.com/garodriguezlp/maven-archetype-java11.git</connection>
     <developerConnection>scm:git:https://github.com/garodriguezlp/maven-archetype-java11.git</developerConnection>
     <url>https://github.com/garodriguezlp/maven-archetype-java11</url>
+    <tag>{0}</tag>
   </scm>
 
   <build>
